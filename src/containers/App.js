@@ -29,7 +29,12 @@ class App extends Component {
       return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     })
     return !robots.length ?
-      <h1>Loading</h1> :
+      (
+      <div className='loading'>
+        <h1>Searching For Robots...</h1>
+        <div class="lds-ripple"><div></div><div></div></div>
+      </div>
+      ):
       (
         <div className='tc'>
           <h1 className='f1'>RoboFriends</h1>
